@@ -1,0 +1,23 @@
+@host = http://127.0.0.1:3333
+
+### GET, route: /names/:countryCode/:gender/:count?
+                ### countryCode = FR | US | ...
+                ### gender = male | female | mixte
+                ### count = all | number
+
+GET {{ host }}/names/FR/mixte/12 HTTP/1.1
+content-type: application/json
+
+
+### POST, route: /reviews/:source
+                 ### source = amazon | aliExpress | csv
+                 ### body {
+                    ### url: https://www.amazon.com...
+                 ###}
+
+POST {{ host }}/reviews/amazon HTTP/1.1
+content-type: application/json
+
+{
+    "url": "https://www.amazon.com/PandaEar-Silicone-Babies-Toddlers-Waterproof/dp/B08GFCX964/ref=sr_1_1?qid=1656593296&s=baby-products-intl-ship&sr=1-1"
+}
